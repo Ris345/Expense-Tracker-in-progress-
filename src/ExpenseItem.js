@@ -1,11 +1,14 @@
-import React from "react";
-import App from "./App"; 
+// import React from "react";
+// import App from "./Main"; 
 
 
-function Item() {
-    return (
-        <Expense>
-            
-        </Expense>
-    )
-}
+// export default function Item() {
+//     return (
+//         <Expense>
+//           <td>{option}</td>
+//           <td>{expenseName}</td>
+//           <td>{date}</td>
+//           <td>{amount}</td>
+//         </Expense>
+//     )
+// }

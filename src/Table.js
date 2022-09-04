@@ -1,6 +1,7 @@
-import React from "react";
-import App from "./App";
+
+import Main from "./Main";
 import Form from "./Form"; 
+import { useState } from "react";
 
 
 export default function Table(props) {
@@ -15,7 +16,6 @@ export default function Table(props) {
             <th id="Date">Date</th>
             <th id="Amount">Amount</th>
           </tr>
-          <tr></tr>
         </thead>
       </table>
     </div>
@@ -23,14 +23,11 @@ export default function Table(props) {
 }
 
 
-function TableRow() {
-  return (
-    <td></td>
-  )
-}
 
 
 
 
 
 
+
+// 

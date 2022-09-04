@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import App from "./App";
+import Main from "./Main";
 import Table from "./Table";
+import ExpenseItem from "./ExpenseItem"; 
+
 
 export default function ExpenseBody(props) {
   const [expenseName, setExpenseName] = useState("");
@@ -32,7 +34,7 @@ export default function ExpenseBody(props) {
       date: date,
       amount: amount,
     };
-    console.log(items);
+    console.log(items)
     setOption("");
     setExpenseName("");
     setDate("");
@@ -68,6 +70,14 @@ export default function ExpenseBody(props) {
 
 //testcase 1
 // chose an item in the slect element and have it consle.log
-// updat eexpense name and have the have the state as well
-//updat date name and have the have the state as well
-//updat amount name and have the have the state as well
+// update eexpense name and have the have the state as well
+//update date name and have the have the state as well
+//update amount name and have the have the state as well
+
+// test  case 2
+//input item 1
+//input item 2
+//input item 3
+//input item 4
+// add item button is pressed
+// items on the table mut show!!!

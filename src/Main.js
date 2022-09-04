@@ -12,7 +12,6 @@ export default function Main() {
     <div className="Main">
       <Header />
       <ExpenseBody />
-      <Table />
     </div>
   );
 }
