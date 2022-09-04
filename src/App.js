@@ -1,61 +1,31 @@
-import "./App.css";
+import "./Expense.css";
 import Header from "./Header";
-import Body from "./Body";
+import ExpenseBody from "./Form";
 import Table from "./Table";
 import React from "react";
 import { useState } from "react";
+import Expensebody from "./Form";
 
 export default function Main() {
-  const name = useState(["hello"]);
-  console.log(name);
-  function handleClick() {
-    // Medium();
-    // Expenses();
-    // Date();
-    // Amount();
-    console.log("hello");
-  }
-
+  
   return (
     <div className="Main">
       <Header />
-      <Body />
-      <p>{name}</p>
-      <button onClick={handleClick}>Add Expenses</button>
+      <ExpenseBody />
       <Table />
     </div>
   );
 }
 
-// function Medium() {
-//   let medium = document.getElementById("option").value;
-//   let mediumRow = document.createElement("tr");
-//   mediumRow.className = "medium";
-//   mediumRow.innerText = medium;
-//   let type = document.getElementById("Type").appendChild(mediumRow);
-// }
 
-// function Expenses() {
-//   let expenses = document.getElementById("name").value;
-//   let expenseRow = document.createElement("tr");
-//   expenseRow.className = "expense";
-//   expenseRow.innerText = expenses;
-//   let name = document.getElementById("Name").appendChild(expenseRow);
-// }
+//work on getting props.
+// work on getting state.
+// grabbing one of the option element and displaying that in the screen.
 
-// function Date() {
-//   let date = document.getElementById("date").value;
-//   let dateRow = document.createElement("tr");
-//   dateRow.className = "date";
-//   dateRow.innerText = date;
-//   let dates = document.getElementById("Date").appendChild(dateRow);
-// }
+// test case 1
+// select one item
+// click the add button, to check can also console.log the item...
+// the add item must show on the screen.
 
-// function Amount() {
-//   let amount = document.getElementById("amount").value;
-//   let amountRow = document.createElement("tr");
-//   amountRow.className = "amount";
-//   amountRow.innerText = amount;
-//   console.log(amountRow);
-//   let amounts = document.getElementById("Amount").appendChild(amountRow);
-// }
+// grab something from the input and display it on the table
+//
