@@ -1,7 +1,7 @@
 import React from "react";
+import Main from "./Main";
 
-
-function Header() {
+function Header(props) {
     return (
       <header className="Main-header">
         <h1>Expense Tracker</h1>
@@ -12,3 +12,9 @@ function Header() {
   export default Header;
   
   
+
+
+  // <h1>Expense Tracker{props.name} {props.job}</h1>
+
+
+ 
