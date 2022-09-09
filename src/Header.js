@@ -14,7 +14,5 @@ function Header(props) {
   
 
 
-  // <h1>Expense Tracker{props.name} {props.job}</h1>
-
 
  

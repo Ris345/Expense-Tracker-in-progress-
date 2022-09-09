@@ -1,11 +1,13 @@
-
 import Main from "./Main";
-import Form from "./Form"; 
 import { useState } from "react";
 
-
 const Table = (props) => {
-   
+  debugger;
+  const retrivedItems = props.expenses;
+  const firstItem = retrivedItems.payment;
+  const secondItem = retrivedItems.items;
+  const thirdItem = retrivedItems.date;
+  const fourthItem = retrivedItems.amount;
 
   return (
     <div>
@@ -17,24 +19,19 @@ const Table = (props) => {
             <th id="Date">Date</th>
             <th id="Amount">Amount</th>
           </tr>
-          <tr>
-            <td>{props.data}</td>
-            <td>{props.expenseData}</td>
-            <td>{props.dateData}</td>
-            <td>{props.amountData}</td>
-         </tr>
         </thead>
-      </table> 
+        <tbody>
+          <tr>
+            <td>{firstItem}</td>
+            <td>{secondItem}</td>
+            <td>{thirdItem}</td>
+            <td>{fourthItem}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
-}
+};
 
+export default Table;
 
-
-export default Table; 
-
-
-
-
-
- 
