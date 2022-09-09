@@ -8,6 +8,7 @@ const Table = (props) => {
   const secondItem = retrivedItems.items;
   const thirdItem = retrivedItems.date;
   const fourthItem = retrivedItems.amount;
+  
 
   return (
     <div>
@@ -21,6 +22,14 @@ const Table = (props) => {
           </tr>
         </thead>
         <tbody>
+          <tr>
+
+          {
+
+              retrivedItems.map(items => <td>items</td>)
+ 
+           }
+          </tr>
           <tr>
             <td>{firstItem}</td>
             <td>{secondItem}</td>

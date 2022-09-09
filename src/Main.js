@@ -18,8 +18,6 @@ export default function Main(props) {
     },
   ]);
 
-  
-
   function gatherInfo() {
     setExpenses({
       payment: option,
@@ -83,7 +81,6 @@ export default function Main(props) {
             value={expenseName}
             onChange={handleChange}
             required
-            text
             placeholder="Expense"
           />
           <label>Date</label>
@@ -111,10 +108,6 @@ export default function Main(props) {
   );
 }
 
-
-
-
-
 // test case 1
 // type somehting in the input (main.js/parent)
 // continue second box
@@ -129,12 +122,9 @@ export default function Main(props) {
 // else
 // don't display the items
 
-
-// test case 2 
-// user is able to add items in a list continiously with each input 
+// test case 2
+// user is able to add items in a list continiously with each input
 //
-
-
 
 // setOption("");
 // setExpenseName("");
