@@ -2,39 +2,39 @@ import "./Expense.css";
 import Header from "./Header";
 import Table from "./Table";
 import { useState } from "react";
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Main(props) {
-  debugger;
   const [expenseName, setExpenseName] = useState("");
   const [option, setOption] = useState("");
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
-  const [expenses, setExpenses] = useState([
-    {
-      payment: "",
-      items: "",
-      date: "",
-      amount: "",
-    },
-  ]);
+  const [expenses, setExpenses] = useState([]);
+  const [list, setList] = useState();
+ 
+  console.log(expenses)
 
   function gatherInfo() {
-    setExpenses({
-      payment: option,
-      items: expenseName,
-      date: date,
-      amount: amount,
+    setExpenses((prevExpenses) => {
+      return [
+        ...prevExpenses,
+        {
+          payment: option,
+          items: expenseName,
+          date: date,
+          amount: amount,
+        },
+      ];
     });
   }
 
-  // const sendData = (props) => {
-  //   const items = {
-  //     method: option,
-  //     type: expenseName,
-  //     date: date,
-  //     amount: amount,
-  //   };
-  // };
+
+  const handleRemove = () => {
+    setExpenses([]);
+    let checkItems = expenses.filter((x) => console.log(x.length > 5))
+    console.log(checkItems)
+  };
 
   function handleOption(e) {
     setOption(e.target.value);
@@ -86,10 +86,10 @@ export default function Main(props) {
           <label>Date</label>
           <input
             type="date"
+            name="date"
             value={date}
             onChange={handledateChange}
             required
-            number
           />
           <label>Amount</label>
           <input
@@ -98,71 +98,32 @@ export default function Main(props) {
             onChange={handleamountChange}
             required
             number
-            placeholder="$"
+            placeholder="Amount"
           />
-          <button type="submit">Add Expenses</button>
+          <Button type="submit" class="btn btn-primary">
+            Add Expenses
+          </Button>
         </form>
       </div>
-      <Table handleSubmit={handleSubmit} expenses={expenses} />
+      <Table
+        handleSubmit={handleSubmit}
+        expenses={expenses}
+        handleRemove={handleRemove}
+      />
     </div>
   );
 }
 
-// test case 1
-// type somehting in the input (main.js/parent)
-// continue second box
-// continue third box
-// continue fourth box
-// now click the button add items (this is should make the items send to the child component!!)
-// a list item should display in ... (table.js/child)
+//test case 3
+// user is able  to delete items from the list with a button press
+// EXPECTED
+// user is able to delete seelctd rows
+// ACTUAL
+// delete button deletes all rows
 
-//test case 1 logic
-// if soemthing is typed in the input box && the button is cicked
-// display the items in the table
-// else
-// don't display the items
+// bug fix
+// date should apear in DD:MM:YY format
 
-// test case 2
-// user is able to add items in a list continiously with each input
-//
+// how to local storage
 
-// setOption("");
-// setExpenseName("");
-// setDate("");
-// setAmount("");
-
-// sendData();
-// const items = {
-//   method: option,
-//   type: expenseName,
-//   date: date,
-//   amount: amount,
-// };
-// const optionUpdate = items[0]
-// console.log(optionUpdate)
-// const expenseNameupdate = items[1]
-// console.log(expenseNameupdate)
-// const dateUpdates = items[2]
-// console.log(dateUpdates)
-// const amountUpdate = items[3]
-// console.log(amountUpdate)
-
-// mapArr();
-
-//  function mapArr () {
-//    let newArray = dataArr.map(data => <td>{data}</td>)
-//   console.log(newArray)
-// }
-
-// const items = [option, expenseName, date, amount];
-// const optionUpdate = items[0]
-// console.log(optionUpdate)
-
-// I need a function that checks if the input field is full if it is not full then
-
-// I need to type something in the input, after the button is presssed I need the object to display,
-
-// setOption("");
-// setExpenseName("");
-// setDate("");
-// setAmount("");
+// .filter method to delete only the selected items.

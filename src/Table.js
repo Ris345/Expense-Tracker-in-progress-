@@ -1,15 +1,21 @@
 import Main from "./Main";
 import { useState } from "react";
+import { Button } from 'react-bootstrap';
+import { FaTrashAlt } from 'react-icons/fa'
 
 const Table = (props) => {
-  debugger;
-  const retrivedItems = props.expenses;
-  const firstItem = retrivedItems.payment;
-  const secondItem = retrivedItems.items;
-  const thirdItem = retrivedItems.date;
-  const fourthItem = retrivedItems.amount;
-  
+  const expenseRows = props.expenses.map((expense) => {
 
+    return (
+      <tr key={expense.id}>
+        <td>{expense.payment}</td>
+        <td>{expense.items}</td>
+        <td>{expense.date}</td>
+        <td>{expense.amount}</td>
+        <Button onClick={() => props.handleRemove()}><FaTrashAlt/></Button>
+      </tr>
+    );
+  });
   return (
     <div>
       <table>
@@ -21,26 +27,12 @@ const Table = (props) => {
             <th id="Amount">Amount</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-
-          {
-
-              retrivedItems.map(items => <td>items</td>)
- 
-           }
-          </tr>
-          <tr>
-            <td>{firstItem}</td>
-            <td>{secondItem}</td>
-            <td>{thirdItem}</td>
-            <td>{fourthItem}</td>
-          </tr>
-        </tbody>
+        <tbody>{expenseRows}</tbody>
       </table>
     </div>
   );
 };
 
 export default Table;
+
 

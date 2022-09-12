@@ -1,20 +1,22 @@
 html {
-  font-size: 2rem; ;
+  font-size: 2rem; 
+  background-color:#e6e7e6;
 }
 
 .Main {
   text-align: center;
-  background-color: #09c732;
   margin-left: 0;
   margin-left: 0;
-  color: white;
-  border: 1px solid white;
+  color: rgb(6, 38, 102);
+  background-color:#e6e7e6;
 
 }
 
 .ExpenseForm {
   display: flex;
   justify-content:space-around;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
@@ -29,9 +31,9 @@ table {
   width: 100%;
   text-align: center;
   padding: 10px;
-  border: 1px solid rgb(255, 255, 255);
   margin-bottom: 40%;
   margin-top: 5%;
+  border-top: 10px solid rgb(6, 38, 102);
 }
 
 
@@ -62,33 +64,10 @@ table {
 }
 
 
-button {
-    width: 15%;
-    background-color: transparent;
-    padding: 1.5%;
-    color: rgb(255, 255, 255);
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 50px;
-    margin-top: 1px;
-    margin: auto;
-    
-}
-
-button:hover {
-  background-color: #FFFEF1;
-  color: #2C5E2E;
-}
-
-
-
-
-table {
-  margin: auto;
-  width: 100%;
+input{
   text-align: center;
-  padding: 10px;
-  border: 1px solid rgb(255, 255, 255);
-  margin-bottom: 40%;
-  margin-top: 5%;
 }
 
+button{
+  margin: auto;
+}
