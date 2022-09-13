@@ -1,22 +1,24 @@
 html {
   font-size: 2rem; 
-  background-color:#e6e7e6;
+  background-color:#72e172;
 }
 
 .Main {
   text-align: center;
   margin-left: 0;
   margin-left: 0;
-  color: rgb(6, 38, 102);
-  background-color:#e6e7e6;
+  color: rgb(0, 0, 0);
+  background-color:#72e172;
 
 }
+
 
 .ExpenseForm {
   display: flex;
   justify-content:space-around;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+
 }
 
 
@@ -33,7 +35,7 @@ table {
   padding: 10px;
   margin-bottom: 40%;
   margin-top: 5%;
-  border-top: 10px solid rgb(6, 38, 102);
+  border-top: 10px solid rgb(255, 255, 255);
 }
 
 
@@ -68,6 +70,9 @@ input{
   text-align: center;
 }
 
+.text-center{
+  margin-top: 25px;
+}
 button{
   margin: auto;
 }

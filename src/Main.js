@@ -5,22 +5,20 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
 export default function Main(props) {
   const [expenseName, setExpenseName] = useState("");
   const [option, setOption] = useState("");
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
   const [expenses, setExpenses] = useState([]);
-  
+
 
   function gatherInfo() {
     setExpenses((prevExpenses) => {
       return [
         ...prevExpenses,
         {
-          id: Math.random(), 
+          id: Math.random(),
           payment: option,
           items: expenseName,
           date: date,
@@ -30,7 +28,6 @@ export default function Main(props) {
     });
   }
 
-  
   function handleOption(e) {
     setOption(e.target.value);
   }
@@ -60,7 +57,7 @@ export default function Main(props) {
     <div className="Main">
       <Header />
       <div className="ExpenseForm">
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit}>
           <label>Payment</label>
           <input
             type="text"
@@ -68,7 +65,6 @@ export default function Main(props) {
             onChange={handleOption}
             placeholder="Payment"
             required
-            text
           />
           <label>Expense</label>
           <input
@@ -94,18 +90,21 @@ export default function Main(props) {
             required
             number
             placeholder="Amount"
+            min="0"
+            max="10000000000000"
           />
-          <Button type="submit" className="btn btn-primary">
-            Add Expenses
-          </Button>
+          <div className="text-center">
+            <button type="submit" class="btn btn-outline-success">
+              Add Expenses
+            </button>
+          </div>
         </form>
       </div>
-      <Table
-         handleSubmit={handleSubmit}
-         expenses={expenses} 
-         setExpenses={setExpenses}
+       <Table
+        handleSubmit={handleSubmit}
+        expenses={expenses}
+        setExpenses={setExpenses}
       />
     </div>
   );
 }
-
