@@ -1,23 +1,36 @@
 import Main from "./Main";
 import { useState } from "react";
-import { Button } from 'react-bootstrap';
-import { FaTrashAlt } from 'react-icons/fa'
+import { Button } from "react-bootstrap";
+import { FaTheRedYeti, FaTrashAlt } from "react-icons/fa";
+
+
 
 const Table = (props) => {
-  const expenseRows = props.expenses.map((expense) => {
+  const handleRemove = (id) => {
+    debugger;
+    const items = props.expenses.filter((expense) => expense.id !== id)
+    props.setExpenses(items)
+     console.log(items)
+     console.log(id);
+  };
 
+
+  const expenseRows = props.expenses.map((expense, index) => {
     return (
-      <tr key={expense.id}>
-        <td>{expense.payment}</td>
-        <td>{expense.items}</td>
-        <td>{expense.date}</td>
-        <td>{expense.amount}</td>
-        <Button onClick={() => props.handleRemove()}><FaTrashAlt/></Button>
-      </tr>
+        <tr key={expense.id}>
+          <td>{expense.payment}</td>
+          <td>{expense.items}</td>
+          <td>{expense.date}</td>
+          <td>{expense.amount}</td>
+            <Button onClick ={ () => handleRemove(expense.id)}><FaTrashAlt/></Button>
+        </tr>
+      
     );
   });
+
+
   return (
-    <div>
+    <div className="TableArea">
       <table>
         <thead>
           <tr>

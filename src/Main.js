@@ -5,21 +5,22 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
+
 export default function Main(props) {
   const [expenseName, setExpenseName] = useState("");
   const [option, setOption] = useState("");
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
   const [expenses, setExpenses] = useState([]);
-  const [list, setList] = useState();
- 
-  console.log(expenses)
+  
 
   function gatherInfo() {
     setExpenses((prevExpenses) => {
       return [
         ...prevExpenses,
         {
+          id: Math.random(), 
           payment: option,
           items: expenseName,
           date: date,
@@ -29,13 +30,7 @@ export default function Main(props) {
     });
   }
 
-
-  const handleRemove = () => {
-    setExpenses([]);
-    let checkItems = expenses.filter((x) => console.log(x.length > 5))
-    console.log(checkItems)
-  };
-
+  
   function handleOption(e) {
     setOption(e.target.value);
   }
@@ -65,7 +60,7 @@ export default function Main(props) {
     <div className="Main">
       <Header />
       <div className="ExpenseForm">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
           <label>Payment</label>
           <input
             type="text"
@@ -100,30 +95,17 @@ export default function Main(props) {
             number
             placeholder="Amount"
           />
-          <Button type="submit" class="btn btn-primary">
+          <Button type="submit" className="btn btn-primary">
             Add Expenses
           </Button>
         </form>
       </div>
       <Table
-        handleSubmit={handleSubmit}
-        expenses={expenses}
-        handleRemove={handleRemove}
+         handleSubmit={handleSubmit}
+         expenses={expenses} 
+         setExpenses={setExpenses}
       />
     </div>
   );
 }
 
-//test case 3
-// user is able  to delete items from the list with a button press
-// EXPECTED
-// user is able to delete seelctd rows
-// ACTUAL
-// delete button deletes all rows
-
-// bug fix
-// date should apear in DD:MM:YY format
-
-// how to local storage
-
-// .filter method to delete only the selected items.
