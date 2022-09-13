@@ -7,7 +7,7 @@
 
 # Click here for the App 
 
-[EXPENSE TRACKER](https://radiant-chaja-dcb9d3.netlify.app/)
+[EXPENSE TRACKER](https://handy-expense-tracker.netlify.app/)
 
 
 
