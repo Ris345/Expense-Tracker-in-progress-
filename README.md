@@ -1,4 +1,4 @@
-EXPENSE TRACKER
+# EXPENSE TRACKER
 
 ### Expense  Tracker  made  with  JavaScript,  HTML,  CSS,  React  and  Bootstrap.
 
@@ -7,7 +7,7 @@ EXPENSE TRACKER
 
 # Click here for the App 
 
-[EXPENSE TRACKER](https://ris345.github.io/RPS.github.io/)
+[EXPENSE TRACKER](https://radiant-chaja-dcb9d3.netlify.app/)
 
 
 
