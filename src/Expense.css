@@ -1,69 +1,29 @@
 html {
-  font-size: 2rem; 
-  background-color:#72e172;
+  font-size: 1rem; 
+  background-color: rgb(234, 218, 218);
+  
 }
-
-.Main {
-  text-align: center;
-  margin-left: 0;
-  margin-left: 0;
-  color: rgb(0, 0, 0);
-  background-color:#72e172;
-
+.Main-header{
+  background-color: rgb(234, 218, 218);
 }
 
 
-.ExpenseForm {
-  display: flex;
-  justify-content:space-around;
+
+#submit{
   margin-top: 10px;
-  margin-bottom: 20px;
-
 }
 
-
-h1 {
-  text-align: center;
-  text-decoration:dotted;
-}
-
-
-table {
-  margin: auto;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  margin-bottom: 40%;
-  margin-top: 5%;
-  border-top: 10px solid rgb(255, 255, 255);
-}
-
-
-
-#name {
-  border: 4px solid rgb(0, 0, 0);
-  padding:10px; 
-  width: 150px; 
-  text-align: center;
+.d-flex{
+  background-color: rgb(234, 218, 218);
+  border-top: 20px solid rgb(234, 218, 218);
   
 }
 
-#date { 
-  border: 4px solid rgb(0, 0, 0);
-  padding:10px; 
-  width: 150px; 
+h1 {
   text-align: center;
-  margin-top: 15px;
 }
 
-#amount {
-  border: 4px solid rgb(0, 0, 0);
-  padding:10px; 
-  width: 150px; 
-  text-align: left;
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
+
 
 
 input{

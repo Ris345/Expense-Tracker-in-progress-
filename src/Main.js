@@ -4,6 +4,7 @@ import Table from "./Table";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 export default function Main(props) {
   const [expenseName, setExpenseName] = useState("");
@@ -11,7 +12,6 @@ export default function Main(props) {
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
   const [expenses, setExpenses] = useState([]);
-
 
   function gatherInfo() {
     setExpenses((prevExpenses) => {
@@ -54,53 +54,70 @@ export default function Main(props) {
   }
 
   return (
-    <div className="Main">
+    <div>
       <Header />
-      <div className="ExpenseForm">
+      <div class="d-flex justify-content-center">
         <form onSubmit={handleSubmit}>
-          <label>Payment</label>
-          <input
-            type="text"
-            value={option}
-            onChange={handleOption}
-            placeholder="Payment"
-            required
-          />
-          <label>Expense</label>
-          <input
-            type="text"
-            value={expenseName}
-            onChange={handleChange}
-            required
-            placeholder="Expense"
-          />
-          <label>Date</label>
-          <input
-            type="date"
-            name="date"
-            value={date}
-            onChange={handledateChange}
-            required
-          />
-          <label>Amount</label>
-          <input
-            type="number"
-            value={amount}
-            onChange={handleamountChange}
-            required
-            number
-            placeholder="Amount"
-            min="0"
-            max="10000000000000"
-          />
-          <div className="text-center">
-            <button type="submit" class="btn btn-outline-success">
-              Add Expenses
-            </button>
+          <div className="form-group row">
+            <label className="col-sm-4 col-form-label">Payment</label>
           </div>
+          <div className="col-sm-12">
+            <input
+              type="text"
+              value={option}
+              onChange={handleOption}
+              placeholder="Payment"
+              required
+              className="form-control"
+            />
+          </div>
+          <div className="form-group row">
+            <label className="col-sm-4 col-form-label">Expense</label>
+          </div>
+          <div className="col-sm-12">
+            <input
+              type="text"
+              value={expenseName}
+              onChange={handleChange}
+              required
+              placeholder="Expense"
+              className="form-control"
+            />
+          </div>
+          <div className="form-group row">
+            <label className="col-sm-4 col-form-label">Date</label>
+          </div>
+          <div class="col-sm-12">
+            <input
+              type="date"
+              name="date"
+              value={date}
+              onChange={handledateChange}
+              required
+              className="form-control"
+            />
+          </div>
+          <div className="form-group row">
+            <label className="col-sm-4 col-form-label">Amount</label>
+          </div>
+          <div className="col-sm-12">
+            <input
+              type="number"
+              value={amount}
+              onChange={handleamountChange}
+              required
+              number
+              placeholder="Amount"
+              step="any"
+              className="form-control"
+            />
+          </div>
+          <button id="submit" type="submit" class="btn btn-outline-success">
+            Add Expenses
+          </button>
         </form>
       </div>
-       <Table
+      <Table
         handleSubmit={handleSubmit}
         expenses={expenses}
         setExpenses={setExpenses}
