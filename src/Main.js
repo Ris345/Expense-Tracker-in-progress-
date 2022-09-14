@@ -1,7 +1,7 @@
 import "./Expense.css";
 import Header from "./Header";
 import Table from "./Table";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -27,6 +27,20 @@ export default function Main(props) {
       ];
     });
   }
+
+  useEffect(() => {
+    const expenseData = localStorage.getItem("expense-list");
+    if (expenseData) {
+      setExpenses(JSON.parse(expenseData));
+    }
+  }, []);
+
+  useEffect(() => {
+    const expenseData = localStorage.setItem(
+      "expense-list",
+      JSON.stringify(expenses)
+    );
+  });
 
   function handleOption(e) {
     setOption(e.target.value);
