@@ -2,27 +2,27 @@ import "./Expense.css";
 import Header from "./Header";
 import Table from "./Table";
 import { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.css";
+import Form from "./Form";
 
 export default function Main(props) {
-  const [expenseName, setExpenseName] = useState("");
-  const [option, setOption] = useState("");
-  const [date, setDate] = useState("");
-  const [amount, setAmount] = useState("");
+  const [form, setForm] = useState({
+    expenseName: "",
+    option: "",
+    date: "",
+    amount: "",
+  });
   const [expenses, setExpenses] = useState([]);
 
-  function gatherInfo() {
+  function addExpense() {
     setExpenses((prevExpenses) => {
       return [
         ...prevExpenses,
         {
           id: Math.random(),
-          payment: option,
-          items: expenseName,
-          date: date,
-          amount: amount,
+          payment: form.option,
+          items: form.expenseName,
+          date: form.date,
+          amount: form.amount,
         },
       ];
     });
@@ -36,101 +36,33 @@ export default function Main(props) {
   }, []);
 
   useEffect(() => {
-    const expenseData = localStorage.setItem(
-      "expense-list",
-      JSON.stringify(expenses)
-    );
-  });
+    localStorage.setItem("expense-list", JSON.stringify(expenses));
+  }, [expenses]);
 
-  function handleOption(e) {
-    setOption(e.target.value);
-  }
-
-  function handleChange(e) {
-    setExpenseName(e.target.value);
-  }
-
-  function handledateChange(e) {
-    setDate(e.target.value);
-  }
-
-  function handleamountChange(e) {
-    setAmount(e.target.value);
+  function updateForm(e) {
+    setForm((prevForm) => {
+      return {
+        ...prevForm,
+        [e.target.name]: e.target.value,
+      };
+    });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    gatherInfo();
-    setOption("");
-    setExpenseName("");
-    setDate("");
-    setAmount("");
+    addExpense();
+    setForm({
+      option: "",
+      expenseName: "",
+      date: "",
+      amount: "",
+    });
   }
 
   return (
     <div>
       <Header />
-      <div class="d-flex justify-content-center">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group row">
-            <label className="col-sm-4 col-form-label">Payment</label>
-          </div>
-          <div className="col-sm-12">
-            <input
-              type="text"
-              value={option}
-              onChange={handleOption}
-              placeholder="Payment"
-              required
-              className="form-control"
-            />
-          </div>
-          <div className="form-group row">
-            <label className="col-sm-4 col-form-label">Expense</label>
-          </div>
-          <div className="col-sm-12">
-            <input
-              type="text"
-              value={expenseName}
-              onChange={handleChange}
-              required
-              placeholder="Expense"
-              className="form-control"
-            />
-          </div>
-          <div className="form-group row">
-            <label className="col-sm-4 col-form-label">Date</label>
-          </div>
-          <div class="col-sm-12">
-            <input
-              type="date"
-              name="date"
-              value={date}
-              onChange={handledateChange}
-              required
-              className="form-control"
-            />
-          </div>
-          <div className="form-group row">
-            <label className="col-sm-4 col-form-label">Amount</label>
-          </div>
-          <div className="col-sm-12">
-            <input
-              type="number"
-              value={amount}
-              onChange={handleamountChange}
-              required
-              number
-              placeholder="Amount"
-              step="any"
-              className="form-control"
-            />
-          </div>
-          <button id="submit" type="submit" class="btn btn-outline-success">
-            Add Expenses
-          </button>
-        </form>
-      </div>
+      <Form handleSubmit={handleSubmit} form={form} updateForm={updateForm} />
       <Table
         handleSubmit={handleSubmit}
         expenses={expenses}

@@ -1,7 +1,4 @@
-import Main from "./Main";
-import { useState } from "react";
-import { Button } from "react-bootstrap";
-import { FaTheRedYeti, FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 
 const Table = (props) => {
   const handleRemove = (id) => {

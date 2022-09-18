@@ -3,17 +3,16 @@ html {
   background-color: rgb(234, 218, 218);
   
 }
-.Main-header{
+
+.main-header{
   background-color: rgb(234, 218, 218);
 }
 
-
-
-#submit{
+#submit {
   margin-top: 10px;
 }
 
-.d-flex{
+.d-flex { 
   background-color: rgb(234, 218, 218);
   border-top: 20px solid rgb(234, 218, 218);
   
@@ -23,16 +22,11 @@ h1 {
   text-align: center;
 }
 
-
-
-
-input{
+input {
   text-align: center;
 }
 
-.text-center{
+.text-center {
   margin-top: 25px;
 }
-button{
-  margin: auto;
-}
+
