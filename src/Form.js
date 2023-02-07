@@ -2,7 +2,7 @@ import React from "react";
 
 function Form(props) {
   return (
-    <div class="d-flex justify-content-center">
+    <div className="d-flex justify-content-center">
       <form onSubmit={props.handleSubmit}>
         <div className="form-group row">
           <label className="col-sm-4 col-form-label">Payment</label>
@@ -35,7 +35,7 @@ function Form(props) {
         <div className="form-group row">
           <label className="col-sm-4 col-form-label">Date</label>
         </div>
-        <div class="col-sm-12">
+        <div className="col-sm-12">
           <input
             type="date"
             name="date"
@@ -55,13 +55,12 @@ function Form(props) {
             value={props.form.amount}
             onChange={props.updateForm}
             required
-            number
             placeholder="Amount"
             step="any"
             className="form-control"
           />
         </div>
-        <button id="submit" type="submit" class="btn btn-outline-success">
+        <button id="submit" type="submit" className="btn btn-outline-success">
           Add Expenses
         </button>
       </form>

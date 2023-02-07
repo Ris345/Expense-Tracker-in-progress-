@@ -14,6 +14,7 @@ export default function Main(props) {
   const [expenses, setExpenses] = useState([]);
 
   function addExpense() {
+    debugger;
     setExpenses((prevExpenses) => {
       return [
         ...prevExpenses,

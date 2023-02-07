@@ -1,6 +1,7 @@
 import { FaTrashAlt } from "react-icons/fa";
 
 const Table = (props) => {
+  debugger; 
   const handleRemove = (id) => {
     const items = props.expenses.filter((expense) => expense.id !== id);
     props.setExpenses(items);
