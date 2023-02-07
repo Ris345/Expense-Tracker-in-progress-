@@ -2,7 +2,7 @@
 
 ### Expense Tracker made with JavaScript, HTML, CSS, React and Bootstrap.
 
-![App Picture](./Expense%20Tracker%20.png)
+![App Picture](./Expense%20Tracker.gif)
 
 # Click here for the App
 
